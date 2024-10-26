@@ -1,0 +1,216 @@
+---
+title: MessageInput
+description: A textarea component with file attachment support, auto-resizing, and drag-and-drop capabilities.
+component: true
+---
+
+<ComponentPreview
+  name="message-input-demo"
+  title="MessageInput"
+  description="A message input with file attachments support."
+/>
+
+The MessageInput component provides a rich textarea experience with support for file attachments, auto-resizing, and drag-and-drop file uploads.
+
+## Features
+
+- Auto-resizing textarea
+- File attachments support
+- Drag and drop file uploads
+- Submit on Enter (configurable)
+- Stop generation button
+- Fully customizable styling
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://shadcn-chatbot-kit.vercel.app/r/message-input.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="message-input" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+### Basic Usage
+
+```tsx
+import { MessageInput } from "@/components/ui/message-input"
+
+export function BasicMessageInput() {
+  return (
+    <MessageInput
+      value={input}
+      onChange={handleInputChange}
+      isGenerating={false}
+    />
+  )
+}
+```
+
+### With File Attachments
+
+```tsx
+import { MessageInput } from "@/components/ui/message-input"
+
+export function MessageInputWithAttachments() {
+  const [files, setFiles] = useState<File[] | null>(null)
+
+  return (
+    <MessageInput
+      value={input}
+      onChange={handleInputChange}
+      isGenerating={false}
+      allowAttachments
+      files={files}
+      setFiles={setFiles}
+    />
+  )
+}
+```
+
+### With Stop Button
+
+```tsx
+import { MessageInput } from "@/components/ui/message-input"
+
+export function MessageInputWithStop() {
+  return (
+    <MessageInput
+      value={input}
+      onChange={handleInputChange}
+      isGenerating={true}
+      stop={() => {
+        // Handle stop generation
+      }}
+    />
+  )
+}
+```
+
+## Props
+
+The MessageInput component accepts two sets of props depending on whether file attachments are enabled.
+
+### Props
+
+| Prop               | Type         | Description                    | Default     |
+| ------------------ | ------------ | ------------------------------ | ----------- |
+| `value`            | `string`     | Current input value            | Required    |
+| `submitOnEnter`    | `boolean`    | Whether to submit on Enter key | `true`      |
+| `stop`             | `() => void` | Function to stop generation    | -           |
+| `isGenerating`     | `boolean`    | Whether AI is generating       | Required    |
+| `placeholder`      | `string`     | Input placeholder text         | "Ask AI..." |
+| `allowAttachments` | `boolean`    | Enable file attachments        |
+
+### With Attachments
+
+When `allowAttachments` is `true`, these additional props are required:
+
+| Prop       | Type                                                   | Description              |
+| ---------- | ------------------------------------------------------ | ------------------------ |
+| `files`    | `File[] \| null`                                       | Currently attached files |
+| `setFiles` | `React.Dispatch<React.SetStateAction<File[] \| null>>` | Files state setter       |
+
+The component also accepts all standard textarea HTML attributes.
+
+## Features
+
+### Auto-resizing
+
+The textarea automatically resizes based on content up to a maximum height of 240px.
+
+```tsx
+<MessageInput value={input} onChange={handleInputChange} isGenerating={false} />
+```
+
+### File Attachments
+
+Enable file attachments with drag-and-drop support:
+
+```tsx
+<MessageInput
+  value={input}
+  onChange={handleInputChange}
+  isGenerating={false}
+  allowAttachments
+  files={files}
+  setFiles={setFiles}
+/>
+```
+
+### Submit Behavior
+
+Control whether Enter key submits the form:
+
+```tsx
+<MessageInput
+  value={input}
+  onChange={handleInputChange}
+  isGenerating={false}
+  submitOnEnter={false} // Disable submit on Enter
+/>
+```
+
+### Generation Control
+
+Show stop button during generation:
+
+```tsx
+<MessageInput
+  value={input}
+  onChange={handleInputChange}
+  isGenerating={true}
+  stop={() => {
+    // Handle stop
+  }}
+/>
+```
+
+## Examples
+
+### In a Chat Form
+
+```tsx
+<ChatForm isPending={isPending} handleSubmit={handleSubmit}>
+  {({ files, setFiles }) => (
+    <MessageInput
+      value={input}
+      onChange={handleInputChange}
+      isGenerating={isLoading}
+      stop={stop}
+      allowAttachments
+      files={files}
+      setFiles={setFiles}
+    />
+  )}
+</ChatForm>
+```
+
+## Theming
+
+The Chat component is using theme colors and fully themable with CSS variables.
