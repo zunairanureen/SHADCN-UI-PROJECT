@@ -12,6 +12,15 @@ export function SiteFooter() {
             rel="noreferrer"
             className="font-medium underline underline-offset-4"
           >
+            Blazity
+          </a>
+          , based on a project by{" "}
+          <a
+            href="https://x.com/shadcn"
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium underline underline-offset-4"
+          >
             shadcn
           </a>
           . The source code is available on{" "}

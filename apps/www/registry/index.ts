@@ -79,6 +79,23 @@ export const registry: Registry = [
     name: "typing-indicator",
     type: "registry:ui",
     files: ["ui/typing-indicator.tsx"],
+    tailwind: {
+      config: {
+        theme: {
+          extend: {
+            keyframes: {
+              "typing-dot-bounce": {
+                "0%,40%": { transform: "translateY(0)" },
+                "20%": { transform: "translateY(-0.25rem)" },
+              },
+            },
+            animation: {
+              "typing-dot-bounce": "typing-dot-bounce 1.25s ease-out infinite",
+            },
+          },
+        },
+      },
+    },
   },
   {
     name: "prompt-suggestions",

@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: "shadcn",
-      url: "https://shadcn.com",
+      name: "Blazity",
+      url: "https://blazity.com",
     },
   ],
   creator: "shadcn",

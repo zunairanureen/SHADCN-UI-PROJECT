@@ -15,7 +15,7 @@ import {
   DropdownMenuTrigger,
 } from "@/registry/new-york/ui/dropdown-menu"
 
-interface CopyButtonProps extends ButtonProps {
+interface CopyButtonProps extends Omit<ButtonProps, "onClick"> {
   value: string
   src?: string
   event?: Event["name"]
