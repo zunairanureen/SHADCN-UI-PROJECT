@@ -1,0 +1,177 @@
+---
+title: ChatMessage
+description: A customizable message bubble component for chat interfaces with support for user and AI messages.
+component: true
+---
+
+<ComponentPreview
+  name="chat-message-demo"
+  title="ChatMessage"
+  description="A message bubble with support for markdown content and animations."
+/>
+
+The ChatMessage component provides a styled message bubble with support for markdown content, timestamps, animations, and contextual actions.
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add http://localhost:3333/r/chat-message.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="chat-message" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import { ChatMessage } from "@/components/ui/chat-message"
+
+export function ChatDemo() {
+  return (
+    <div className="space-y-4">
+      <ChatMessage
+        role="user"
+        content="Hello, how are you?"
+        createdAt={new Date()}
+        showTimeStamp
+      />
+      <ChatMessage
+        role="assistant"
+        content="I'm doing well, thank you for asking!"
+        createdAt={new Date()}
+        showTimeStamp
+      />
+    </div>
+  )
+}
+```
+
+## Props
+
+| Prop            | Type                                     | Default   | Description                               |
+| --------------- | ---------------------------------------- | --------- | ----------------------------------------- |
+| `role`          | `"user" \| "assistant" \| string`        | Required  | The role of the message sender            |
+| `content`       | `string`                                 | Required  | The message content (supports markdown)   |
+| `createdAt`     | `Date`                                   | -         | Timestamp for the message                 |
+| `showTimeStamp` | `boolean`                                | `false`   | Whether to show the timestamp             |
+| `animation`     | `"none" \| "slide" \| "scale" \| "fade"` | `"scale"` | Animation style for the message bubble    |
+| `actions`       | `ReactNode`                              | -         | Actions to show on hover (assistant only) |
+| `id`            | `string`                                 | Required  | Unique identifier for the message         |
+| `attachments`   | `File[]`                                 | -         | Array of attached files                   |
+
+## Examples
+
+### Different Animation Styles
+
+```tsx
+<ChatMessage
+  role="user"
+  content="Slide animation"
+  animation="slide"
+/>
+
+<ChatMessage
+  role="assistant"
+  content="Scale animation"
+  animation="scale"
+/>
+
+<ChatMessage
+  role="user"
+  content="Fade animation"
+  animation="fade"
+/>
+
+<ChatMessage
+  role="assistant"
+  content="No animation"
+  animation="none"
+/>
+```
+
+### With Actions
+
+```tsx
+import { CopyButton } from "@/components/ui/copy-button"
+
+<ChatMessage
+  role="assistant"
+  content="This is a message with actions"
+  actions={
+    <CopyButton
+      content="This is a message with actions"
+      copyMessage="Copied response to clipboard!"
+    />
+  }
+/>
+```
+
+### With Timestamp
+
+```tsx
+<ChatMessage
+  role="user"
+  content="Message with timestamp"
+  createdAt={new Date()}
+  showTimeStamp
+/>
+```
+
+## Styling
+
+The component uses CSS variables for theming and can be customized using the following classes:
+
+- `group/message`: The message container
+- `text-primary-foreground`: User message text color
+- `text-foreground`: Assistant message text color
+- `bg-primary`: User message background
+- `bg-muted`: Assistant message background
+
+### Custom Styling
+
+```tsx
+<ChatMessage
+  role="user"
+  content="Custom styled message"
+  className="bg-blue-500 text-white"
+/>
+```
+
+## Accessibility
+
+- Messages are properly structured for screen readers
+- Timestamps use semantic HTML
+- Actions are keyboard accessible
+- Color contrast meets WCAG guidelines
+
+## Design Considerations
+
+1. Messages from different roles (user/assistant) are visually distinct through color and positioning
+2. Animations can be disabled for reduced motion preferences
+3. Actions are only shown on hover for a cleaner interface
+4. Markdown support allows for rich content formatting
+5. Timestamps are optional and format according to the user's locale

@@ -1,0 +1,96 @@
+---
+title: MarkdownRenderer
+description: A customizable component for rendering Markdown content with consistent styling.
+component: true
+---
+
+<ComponentPreview
+  name="markdown-demo"
+  title="Markdown"
+  description="A styled markdown renderer."
+/>
+
+The MarkdownRenderer component provides a consistent way to render Markdown content with custom styling, powered by react-markdown and remark-gfm.
+
+## Features
+
+- GitHub Flavored Markdown support
+- Consistent typography and spacing
+- Styled tables, lists, and code blocks
+- Responsive design
+- Theme-aware styling
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add markdown-renderer
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the required dependencies</Step>
+
+```bash
+npm install react-markdown remark-gfm
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="markdown-renderer" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import { MarkdownRenderer } from "@/components/ui/markdown-renderer"
+```
+
+```tsx
+<MarkdownRenderer>
+  {`# Hello World
+
+This is a paragraph with **bold** and *italic* text.
+
+## Lists
+- Item 1
+- Item 2
+  - Nested item
+
+## Code
+\`\`\`tsx
+console.log("Hello World")
+\`\`\`
+
+## Tables
+| Header 1 | Header 2 |
+|----------|----------|
+| Cell 1   | Cell 2   |
+`}
+</MarkdownRenderer>
+```
+
+## Props
+
+| Prop       | Type     | Description                    |
+| ---------- | -------- | ------------------------------ |
+| `children` | `string` | The markdown content to render |

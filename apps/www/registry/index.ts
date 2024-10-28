@@ -114,4 +114,9 @@ export const registry: Registry = [
     type: "registry:example",
     files: ["example/message-input-demo.tsx"],
   },
+  {
+    name: "chat-message-demo",
+    type: "registry:example",
+    files: ["example/chat-message-demo.tsx"],
+  },
 ]

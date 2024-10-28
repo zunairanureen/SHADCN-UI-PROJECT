@@ -1,0 +1,96 @@
+---
+title: CopyButton
+description: A button component that copies content to clipboard with visual feedback.
+component: true
+---
+
+<ComponentPreview
+  name="copy-button-demo"
+  title="Copy Button"
+  description="A button that copies text to clipboard with a success indicator."
+/>
+
+The CopyButton component provides a simple way to copy text to the clipboard with visual feedback using a check mark animation when successful.
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add http://localhost:3333/r/copy-button.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="copy-button" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import { CopyButton } from "@/components/ui/copy-button"
+
+export function Demo() {
+  return (
+    <CopyButton
+      content="Text to be copied"
+      copyMessage="Copied to clipboard!"
+    />
+  )
+}
+```
+
+## Props
+
+| Prop           | Type     | Description                                            |
+| -------------- | -------- | ------------------------------------------------------ |
+| `content`      | `string` | The text content to be copied to clipboard             |
+| `copyMessage?` | `string` | Optional custom message to show when content is copied |
+
+## Examples
+
+### Basic Usage
+
+```tsx
+<CopyButton content="Text to copy" />
+```
+
+### With Custom Success Message
+
+```tsx
+<CopyButton
+  content="API_KEY_123456"
+  copyMessage="API key copied to clipboard!"
+/>
+```
+
+### Within a Code Block
+
+```tsx
+<pre className="relative">
+  <code>console.log("Hello World")</code>
+  <div className="absolute right-2 top-2">
+    <CopyButton content='console.log("Hello World")' />
+  </div>
+</pre>
+```
