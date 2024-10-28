@@ -12,7 +12,7 @@ import { Button } from "@/registry/new-york/ui/button"
 
 export default function IndexPage() {
   return (
-    <div className="container grid grid-cols-2 pt-10">
+    <div className="container grid grid-cols-1 pt-10 md:grid-cols-2">
       <PageHeader>
         <PageHeaderHeading>
           Build beautiful AI apps in hours, not days.
