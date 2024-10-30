@@ -49,6 +49,36 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/message-input",
           items: [],
         },
+        {
+          title: "Message List",
+          href: "/docs/components/message-list",
+          items: [],
+        },
+        {
+          title: "Chat Message",
+          href: "/docs/components/chat-message",
+          items: [],
+        },
+        {
+          title: "Markdown Renderer",
+          href: "/docs/components/markdown-renderer",
+          items: [],
+        },
+        {
+          title: "Prompt Suggestions",
+          href: "/docs/components/prompt-suggestions",
+          items: [],
+        },
+        {
+          title: "Typing Indicator",
+          href: "/docs/components/typing-indicator",
+          items: [],
+        },
+        {
+          title: "Copy Button",
+          href: "/docs/components/copy-button",
+          items: [],
+        },
       ],
     },
   ],
