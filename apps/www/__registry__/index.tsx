@@ -148,4 +148,70 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "chat-message-demo": {
+      name: "chat-message-demo",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: ["registry/default/example/chat-message-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/chat-message-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "message-list-demo": {
+      name: "message-list-demo",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: ["registry/default/example/message-list-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/message-list-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "typing-indicator-demo": {
+      name: "typing-indicator-demo",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: ["registry/default/example/typing-indicator-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/typing-indicator-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "markdown-renderer-demo": {
+      name: "markdown-renderer-demo",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: ["registry/default/example/markdown-renderer-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/markdown-renderer-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "prompt-suggestions-demo": {
+      name: "prompt-suggestions-demo",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: ["registry/default/example/prompt-suggestions-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/prompt-suggestions-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "copy-button-demo": {
+      name: "copy-button-demo",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: ["registry/default/example/copy-button-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/copy-button-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
 }

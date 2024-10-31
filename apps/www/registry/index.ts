@@ -119,4 +119,29 @@ export const registry: Registry = [
     type: "registry:example",
     files: ["example/chat-message-demo.tsx"],
   },
+  {
+    name: "message-list-demo",
+    type: "registry:example",
+    files: ["example/message-list-demo.tsx"],
+  },
+  {
+    name: "typing-indicator-demo",
+    type: "registry:example",
+    files: ["example/typing-indicator-demo.tsx"],
+  },
+  {
+    name: "markdown-renderer-demo",
+    type: "registry:example",
+    files: ["example/markdown-renderer-demo.tsx"],
+  },
+  {
+    name: "prompt-suggestions-demo",
+    type: "registry:example",
+    files: ["example/prompt-suggestions-demo.tsx"],
+  },
+  {
+    name: "copy-button-demo",
+    type: "registry:example",
+    files: ["example/copy-button-demo.tsx"],
+  },
 ]
