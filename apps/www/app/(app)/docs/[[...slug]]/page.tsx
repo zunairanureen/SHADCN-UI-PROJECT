@@ -69,6 +69,9 @@ export async function generateMetadata({
       images: [siteConfig.ogImage],
       creator: "@shadcn",
     },
+    alternates: {
+      canonical: `${siteConfig.url}/docs/${doc.slugAsParams}`,
+    },
   }
 }
 
