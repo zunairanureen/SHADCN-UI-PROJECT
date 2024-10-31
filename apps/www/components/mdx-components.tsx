@@ -16,6 +16,7 @@ import { ComponentPreview } from "@/components/component-preview"
 import { ComponentSource } from "@/components/component-source"
 import { CopyButton, CopyNpmCommandButton } from "@/components/copy-button"
 import { FrameworkDocs } from "@/components/framework-docs"
+import { Icons } from "@/components/icons"
 import {
   Accordion,
   AccordionContent,
@@ -37,6 +38,7 @@ import {
 import { Style } from "@/registry/registry-styles"
 
 const components = {
+  Icons,
   Accordion,
   AccordionContent,
   AccordionItem,
