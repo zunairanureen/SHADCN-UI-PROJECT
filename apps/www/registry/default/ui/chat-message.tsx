@@ -80,12 +80,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
   return (
     <div className={cn("flex flex-col", isUser ? "items-end" : "items-start")}>
       <div className={chatBubbleVariants({ isUser, animation })}>
-        <div
-          className={cn(
-            "space-y-3",
-            isUser ? "text-primary-foreground" : "text-foreground"
-          )}
-        >
+        <div className={isUser ? "text-primary-foreground" : "text-foreground"}>
           <MarkdownRenderer>{content}</MarkdownRenderer>
         </div>
 

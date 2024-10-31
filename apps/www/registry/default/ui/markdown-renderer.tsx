@@ -7,7 +7,11 @@ interface MarkdownRendererProps {
 
 export function MarkdownRenderer({ children }: MarkdownRendererProps) {
   return (
-    <Markdown remarkPlugins={[remarkGfm]} components={COMPONENTS}>
+    <Markdown
+      remarkPlugins={[remarkGfm]}
+      components={COMPONENTS}
+      className="space-y-3"
+    >
       {children}
     </Markdown>
   )
@@ -50,7 +54,10 @@ const COMPONENTS = {
   tr: withClass("tr", "m-0 border-t p-0 even:bg-muted"),
   p: withClass("p", "whitespace-pre-wrap"),
   hr: withClass("hr", "border-foreground/20"),
-  pre: withClass("pre", "rounded-md bg-background/50 p-4 font-mono text-sm"),
+  pre: withClass(
+    "pre",
+    "rounded-md bg-background/50 p-4 font-mono text-sm border"
+  ),
 }
 
 function withClass(Tag: keyof JSX.IntrinsicElements, classes: string) {
