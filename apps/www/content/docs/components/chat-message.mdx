@@ -24,7 +24,7 @@ The ChatMessage component provides a styled message bubble with support for mark
 <TabsContent value="cli">
 
 ```bash
-npx shadcn@latest add http://localhost:3333/r/chat-message.json
+npx shadcn@latest add https://shadcn-chatbot-kit.vercel.app/r/chat-message.json
 ```
 
 </TabsContent>
@@ -118,7 +118,7 @@ export function ChatDemo() {
 ```tsx
 import { CopyButton } from "@/components/ui/copy-button"
 
-<ChatMessage
+;<ChatMessage
   role="assistant"
   content="This is a message with actions"
   actions={

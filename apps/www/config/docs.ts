@@ -45,7 +45,7 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
-          title: "MessageInput",
+          title: "Message Input",
           href: "/docs/components/message-input",
           items: [],
         },
