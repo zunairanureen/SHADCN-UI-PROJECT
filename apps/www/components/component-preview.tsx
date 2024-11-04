@@ -61,9 +61,7 @@ export function ComponentPreview({
   }, [name])
 
   const codeString = React.useMemo(() => {
-    if (
-      typeof Code?.props["data-rehype-pretty-code-fragment"] !== "undefined"
-    ) {
+    if (typeof Code?.props["data-rehype-pretty-code-figure"] !== "undefined") {
       const [Button] = React.Children.toArray(
         Code.props.children
       ) as React.ReactElement[]

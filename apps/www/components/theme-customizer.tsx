@@ -431,7 +431,7 @@ function CustomizerCode() {
 
   return (
     <ThemeWrapper defaultTheme="zinc" className="relative space-y-4">
-      <div data-rehype-pretty-code-fragment="">
+      <div data-rehype-pretty-code-figure="">
         <pre className="max-h-[450px] overflow-x-auto rounded-lg border bg-zinc-950 py-4 dark:bg-zinc-900">
           <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
             <span className="line text-white">@layer base &#123;</span>
