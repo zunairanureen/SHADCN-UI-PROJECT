@@ -21,7 +21,6 @@ export function MarkdownRenderer({ children }: MarkdownRendererProps) {
   )
 }
 
-const shikiPromise = import("shiki")
 interface HighlightedPre extends React.HTMLAttributes<HTMLPreElement> {
   children: string
   language: string
@@ -29,7 +28,7 @@ interface HighlightedPre extends React.HTMLAttributes<HTMLPreElement> {
 
 const HighlightedPre = React.memo(
   async ({ children, language, ...props }: HighlightedPre) => {
-    const { codeToTokens, bundledLanguages } = await shikiPromise
+    const { codeToTokens, bundledLanguages } = await import("shiki")
 
     if (!(language in bundledLanguages)) {
       return <pre {...props}>{children}</pre>
