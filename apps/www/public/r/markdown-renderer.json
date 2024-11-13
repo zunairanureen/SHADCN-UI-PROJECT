@@ -6,6 +6,9 @@
     "remark-gfm",
     "shiki"
   ],
+  "registryDependencies": [
+    "https://shadcn-chatbot-kit.vercel.app/r/copy-button.json"
+  ],
   "files": [
     {
       "path": "ui/markdown-renderer.tsx",

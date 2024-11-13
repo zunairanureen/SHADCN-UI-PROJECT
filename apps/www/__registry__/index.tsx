@@ -63,7 +63,7 @@ export const Index: Record<string, any> = {
     "markdown-renderer": {
       name: "markdown-renderer",
       type: "registry:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["https://shadcn-chatbot-kit.vercel.app/r/copy-button.json"],
       files: ["registry/default/ui/markdown-renderer.tsx"],
       component: React.lazy(() => import("@/registry/default/ui/markdown-renderer.tsx")),
       source: "",
