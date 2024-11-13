@@ -44,12 +44,29 @@ npx shadcn@latest add https://shadcn-chatbot-kit.vercel.app/r/markdown-renderer.
 <Step>Install the required dependencies</Step>
 
 ```bash
-npm install react-markdown remark-gfm
+npm install react-markdown remark-gfm shiki
 ```
 
 <Step>Copy and paste the following code into your project.</Step>
 
 <ComponentSource name="markdown-renderer" />
+
+<Step>Add the following options into `tailwind.config.js`</Step>
+
+<Step>Add the following options into `tailwind.config.js`</Step>
+
+Add the following in the `theme.extend.colors` section of your `tailwind.config.js` file
+
+```javascript title="tailwind.config.js"
+// ...
+shiki: {
+  light: "var(--shiki-light)",
+  "light-bg": "var(--shiki-light-bg)",
+  dark: "var(--shiki-dark)",
+  "dark-bg": "var(--shiki-dark-bg)",
+},
+// ...
+```
 
 <Step>Update the import paths to match your project setup.</Step>
 
