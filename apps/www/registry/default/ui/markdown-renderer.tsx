@@ -66,7 +66,7 @@ const HighlightedPre = React.memo(
                   )
                 })}
               </span>
-              {"\n"}
+              {lineIndex !== tokens.length - 1 && "\n"}
             </>
           ))}
         </code>
