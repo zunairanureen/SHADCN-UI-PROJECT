@@ -137,14 +137,20 @@ export function ChatMessages({
 }: React.PropsWithChildren<{
   messages: Message[]
 }>) {
-  const { containerRef, scrollToBottom, handleScroll, shouldAutoScroll } =
-    useAutoScroll([messages])
+  const {
+    containerRef,
+    scrollToBottom,
+    handleScroll,
+    shouldAutoScroll,
+    handleTouchStart,
+  } = useAutoScroll([messages])
 
   return (
     <div
       className="relative overflow-y-auto pb-4"
       ref={containerRef}
       onScroll={handleScroll}
+      onTouchStart={handleTouchStart}
     >
       {children}
 

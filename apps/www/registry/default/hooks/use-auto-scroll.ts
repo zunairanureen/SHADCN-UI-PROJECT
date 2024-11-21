@@ -19,6 +19,10 @@ export function useAutoScroll(dependencies: React.DependencyList) {
     }
   }
 
+  const handleTouchStart = () => {
+    setShouldAutoScroll(false)
+  }
+
   useEffect(() => {
     if (shouldAutoScroll) {
       scrollToBottom()
@@ -26,5 +30,11 @@ export function useAutoScroll(dependencies: React.DependencyList) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, dependencies)
 
-  return { containerRef, scrollToBottom, handleScroll, shouldAutoScroll }
+  return {
+    containerRef,
+    scrollToBottom,
+    handleScroll,
+    shouldAutoScroll,
+    handleTouchStart,
+  }
 }
