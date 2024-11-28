@@ -1,6 +1,6 @@
 "use client"
 
-import { forwardRef, useState, type ReactElement } from "react"
+import { forwardRef, useCallback, useState, type ReactElement } from "react"
 import { ArrowDown, ThumbsDown, ThumbsUp } from "lucide-react"
 
 import { cn } from "@/lib/utils"
@@ -57,6 +57,43 @@ export function Chat({
   const isEmpty = messages.length === 0
   const isTyping = lastMessage?.role === "user"
 
+  const messageOptions = useCallback(
+    (message: Message) => ({
+      actions: onRateResponse ? (
+        <>
+          <div className="border-r pr-1">
+            <CopyButton
+              content={message.content}
+              copyMessage="Copied response to clipboard!"
+            />
+          </div>
+          <Button
+            size="icon"
+            variant="ghost"
+            className="h-6 w-6"
+            onClick={() => onRateResponse(message.id, "thumbs-up")}
+          >
+            <ThumbsUp className="h-4 w-4" />
+          </Button>
+          <Button
+            size="icon"
+            variant="ghost"
+            className="h-6 w-6"
+            onClick={() => onRateResponse(message.id, "thumbs-down")}
+          >
+            <ThumbsDown className="h-4 w-4" />
+          </Button>
+        </>
+      ) : (
+        <CopyButton
+          content={message.content}
+          copyMessage="Copied response to clipboard!"
+        />
+      ),
+    }),
+    [onRateResponse]
+  )
+
   return (
     <ChatContainer className={className}>
       {isEmpty && append && suggestions ? (
@@ -72,39 +109,7 @@ export function Chat({
           <MessageList
             messages={messages}
             isTyping={isTyping}
-            messageOptions={(message) => ({
-              actions: onRateResponse ? (
-                <>
-                  <div className="border-r pr-1">
-                    <CopyButton
-                      content={message.content}
-                      copyMessage="Copied response to clipboard!"
-                    />
-                  </div>
-                  <Button
-                    size="icon"
-                    variant="ghost"
-                    className="h-6 w-6"
-                    onClick={() => onRateResponse(message.id, "thumbs-up")}
-                  >
-                    <ThumbsUp className="h-4 w-4" />
-                  </Button>
-                  <Button
-                    size="icon"
-                    variant="ghost"
-                    className="h-6 w-6"
-                    onClick={() => onRateResponse(message.id, "thumbs-down")}
-                  >
-                    <ThumbsDown className="h-4 w-4" />
-                  </Button>
-                </>
-              ) : (
-                <CopyButton
-                  content={message.content}
-                  copyMessage="Copied response to clipboard!"
-                />
-              ),
-            })}
+            messageOptions={messageOptions}
           />
         </ChatMessages>
       ) : null}
