@@ -11,14 +11,14 @@ const chatBubbleVariants = cva(
   {
     variants: {
       isUser: {
-        true: "bg-primary",
-        false: "bg-muted",
+        true: "bg-primary text-primary-foreground",
+        false: "bg-muted text-foreground",
       },
       animation: {
         none: "",
-        slide: "animate-in fade-in-0 duration-300",
-        scale: "animate-in fade-in-0 zoom-in-75 duration-300",
-        fade: "animate-in fade-in-0 duration-500",
+        slide: "duration-300 animate-in fade-in-0",
+        scale: "duration-300 animate-in fade-in-0 zoom-in-75",
+        fade: "duration-500 animate-in fade-in-0",
       },
     },
     compoundVariants: [
@@ -60,6 +60,7 @@ export interface ChatMessageProps extends Message {
   showTimeStamp?: boolean
   animation?: Animation
   actions?: React.ReactNode
+  className?: string
 }
 
 export const ChatMessage: React.FC<ChatMessageProps> = ({
@@ -69,6 +70,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
   showTimeStamp = false,
   animation = "scale",
   actions,
+  className,
 }) => {
   const isUser = role === "user"
 
@@ -79,27 +81,28 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
 
   return (
     <div className={cn("flex flex-col", isUser ? "items-end" : "items-start")}>
-      <div className={chatBubbleVariants({ isUser, animation })}>
-        <div className={isUser ? "text-primary-foreground" : "text-foreground"}>
+      <div className={cn(chatBubbleVariants({ isUser, animation }), className)}>
+        <div>
           <MarkdownRenderer>{content}</MarkdownRenderer>
         </div>
 
         {role === "assistant" && actions ? (
-          <div className="bg-background absolute -bottom-4 right-2 flex space-x-1 rounded-lg border p-1 opacity-0 transition-opacity group-hover/message:opacity-100">
+          <div className="absolute -bottom-4 right-2 flex space-x-1 rounded-lg border bg-background p-1 opacity-0 transition-opacity group-hover/message:opacity-100 text-foreground">
             {actions}
           </div>
         ) : null}
       </div>
 
       {showTimeStamp && createdAt ? (
-        <span
+        <time
+          dateTime={createdAt.toISOString()}
           className={cn(
             "mt-1 block px-1 text-xs opacity-50",
-            animation !== "none" && "animate-in fade-in-0 duration-500"
+            animation !== "none" && "duration-500 animate-in fade-in-0"
           )}
         >
           {formattedTime}
-        </span>
+        </time>
       ) : null}
     </div>
   )
