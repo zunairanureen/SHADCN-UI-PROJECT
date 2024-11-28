@@ -127,31 +127,3 @@ interface Message {
   attachments?: File[]
 }
 ```
-
-## Examples
-
-### Basic Usage
-
-```tsx
-<MessageList
-  messages={[
-    {
-      id: "1",
-      role: "user",
-      content: "Hello!",
-    },
-    {
-      id: "2",
-      role: "assistant",
-      content: "Hi there! How can I help you today?",
-    },
-  ]}
-  isTyping={false}
-/>
-```
-
-### Without Timestamps
-
-```tsx
-<MessageList messages={messages} showTimeStamps={false} />
-```

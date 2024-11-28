@@ -69,71 +69,14 @@ Add the following property in the `theme.extend.animation` section of your `tail
 ```tsx
 import { TypingIndicator } from "@/components/ui/typing-indicator"
 
-export function ChatMessage() {
-  return (
-    <div className="flex flex-col gap-2">
-      <div>User is typing...</div>
-      <TypingIndicator />
-    </div>
-  )
+type MessageProps = {
+  isPending: boolean
+  content: string
+}
+
+export function Message({ isPending, content }: MessageProps) {
+  // ...
+
+  return isPending ? <TypingIndicator /> : <p>{content}</p>
 }
 ```
-
-## Examples
-
-### In a Chat Interface
-
-```tsx
-import { TypingIndicator } from "@/components/ui/typing-indicator"
-
-export function ChatMessage({ isTyping }: { isTyping: boolean }) {
-  return (
-    <div className="flex flex-col gap-2">
-      <div>Previous message</div>
-      {isTyping && <TypingIndicator />}
-    </div>
-  )
-}
-```
-
-### Custom Background
-
-```tsx
-import { TypingIndicator } from "@/components/ui/typing-indicator"
-
-export function CustomTypingIndicator() {
-  return (
-    <div className="bg-primary-foreground p-2 rounded-lg">
-      <TypingIndicator />
-    </div>
-  )
-}
-```
-
-## Styling
-
-The component uses the following CSS classes that can be customized:
-
-- `bg-muted`: Background color of the indicator container
-- `animate-typing-dot-bounce`: Animation for the bouncing dots
-- `[animation-delay:90ms]`: Delay for the second dot
-- `[animation-delay:180ms]`: Delay for the third dot
-
-You can override these classes by wrapping the component and applying your own styles:
-
-```tsx
-<div className="bg-primary p-2">
-  <TypingIndicator />
-</div>
-```
-
-## Accessibility
-
-The typing indicator is purely decorative and does not require any accessibility annotations. However, if you're using it in a chat interface, you should ensure that the typing state is properly announced to screen readers through appropriate ARIA live regions in your chat component.
-
-## Design Considerations
-
-1. The component uses three dots with staggered animations to create a natural typing effect
-2. The animation is subtle and not distracting
-3. The component uses the muted background color from your theme for better integration
-4. The dots are spaced appropriately for optimal visual rhythm

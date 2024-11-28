@@ -91,79 +91,35 @@ export function ChatDemo() {
 
 ### Different Animation Styles
 
-```tsx
-<ChatMessage
-  role="user"
-  content="Slide animation"
-  animation="slide"
+<ComponentPreview
+  name="chat-message-animations-demo"
+  title="ChatMessage Animations"
+  description="Different animation styles for chat messages."
 />
-
-<ChatMessage
-  role="assistant"
-  content="Scale animation"
-  animation="scale"
-/>
-
-<ChatMessage
-  role="user"
-  content="Fade animation"
-  animation="fade"
-/>
-
-<ChatMessage
-  role="assistant"
-  content="No animation"
-  animation="none"
-/>
-```
 
 ### With Actions
 
-```tsx
-import { CopyButton } from "@/components/ui/copy-button"
-
-;<ChatMessage
-  role="assistant"
-  content="This is a message with actions"
-  actions={
-    <CopyButton
-      content="This is a message with actions"
-      copyMessage="Copied response to clipboard!"
-    />
-  }
+<ComponentPreview
+  name="chat-message-actions-demo"
+  title="ChatMessage Actions"
+  description="Chat message with interactive actions."
 />
-```
 
 ### With Timestamp
 
-```tsx
-<ChatMessage
-  role="user"
-  content="Message with timestamp"
-  createdAt={new Date()}
-  showTimeStamp
+<ComponentPreview
+  name="chat-message-timestamp-demo"
+  title="ChatMessage Timestamp"
+  description="Chat message with timestamp."
 />
-```
-
-## Styling
-
-The component uses CSS variables for theming and can be customized using the following classes:
-
-- `group/message`: The message container
-- `text-primary-foreground`: User message text color
-- `text-foreground`: Assistant message text color
-- `bg-primary`: User message background
-- `bg-muted`: Assistant message background
 
 ### Custom Styling
 
-```tsx
-<ChatMessage
-  role="user"
-  content="Custom styled message"
-  className="bg-blue-500 text-white"
+<ComponentPreview
+  name="chat-message-custom-styling-demo"
+  title="Custom Styling"
+  description="Chat messages with custom background colors."
 />
-```
 
 ## Accessibility
 
@@ -171,11 +127,3 @@ The component uses CSS variables for theming and can be customized using the fol
 - Timestamps use semantic HTML
 - Actions are keyboard accessible
 - Color contrast meets WCAG guidelines
-
-## Design Considerations
-
-1. Messages from different roles (user/assistant) are visually distinct through color and positioning
-2. Animations can be disabled for reduced motion preferences
-3. Actions are only shown on hover for a cleaner interface
-4. Markdown support allows for rich content formatting
-5. Timestamps are optional and format according to the user's locale

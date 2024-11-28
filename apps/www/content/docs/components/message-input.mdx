@@ -201,26 +201,6 @@ Show stop button during generation:
 />
 ```
 
-## Examples
-
-### In a Chat Form
-
-```tsx
-<ChatForm isPending={isPending} handleSubmit={handleSubmit}>
-  {({ files, setFiles }) => (
-    <MessageInput
-      value={input}
-      onChange={handleInputChange}
-      isGenerating={isLoading}
-      stop={stop}
-      allowAttachments
-      files={files}
-      setFiles={setFiles}
-    />
-  )}
-</ChatForm>
-```
-
 ## Theming
 
 The Chat component is using theme colors and fully themable with CSS variables.

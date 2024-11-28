@@ -161,4 +161,40 @@ export const registry: Registry = [
     type: "registry:example",
     files: ["example/copy-button-demo.tsx"],
   },
+  {
+    name: "chat-message-animations-demo",
+    type: "registry:example",
+    description: "Different animation styles for chat messages",
+    files: ["example/chat-message-animations-demo.tsx"],
+  },
+  {
+    name: "chat-message-actions-demo",
+    type: "registry:example",
+    description: "Chat message with interactive actions",
+    files: ["example/chat-message-actions-demo.tsx"],
+  },
+  {
+    name: "chat-message-timestamp-demo",
+    type: "registry:example",
+    description: "Chat message with timestamp display",
+    files: ["example/chat-message-timestamp-demo.tsx"],
+  },
+  {
+    name: "chat-message-custom-styling-demo",
+    type: "registry:example",
+    description: "Chat message with custom styling options",
+    files: ["example/chat-message-custom-styling-demo.tsx"],
+  },
+  {
+    name: "copy-button-custom-message-demo",
+    type: "registry:example",
+    description: "Copy button with custom success message",
+    files: ["example/copy-button-custom-message-demo.tsx"],
+  },
+  {
+    name: "copy-button-code-block-demo",
+    type: "registry:example",
+    description: "Copy button within a code block",
+    files: ["example/copy-button-code-block-demo.tsx"],
+  },
 ]

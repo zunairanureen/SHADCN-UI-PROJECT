@@ -214,4 +214,70 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "chat-message-animations-demo": {
+      name: "chat-message-animations-demo",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: ["registry/default/example/chat-message-animations-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/chat-message-animations-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "chat-message-actions-demo": {
+      name: "chat-message-actions-demo",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: ["registry/default/example/chat-message-actions-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/chat-message-actions-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "chat-message-timestamp-demo": {
+      name: "chat-message-timestamp-demo",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: ["registry/default/example/chat-message-timestamp-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/chat-message-timestamp-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "chat-message-custom-styling-demo": {
+      name: "chat-message-custom-styling-demo",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: ["registry/default/example/chat-message-custom-styling-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/chat-message-custom-styling-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "copy-button-custom-message-demo": {
+      name: "copy-button-custom-message-demo",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: ["registry/default/example/copy-button-custom-message-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/copy-button-custom-message-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "copy-button-code-block-demo": {
+      name: "copy-button-code-block-demo",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: ["registry/default/example/copy-button-code-block-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/copy-button-code-block-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
 }
