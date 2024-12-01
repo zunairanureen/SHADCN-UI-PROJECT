@@ -152,25 +152,29 @@ export function ChatMessages({
 
   return (
     <div
-      className="relative overflow-y-auto pb-4"
+      className="grid overflow-y-auto pb-4 grid-cols-1"
       ref={containerRef}
       onScroll={handleScroll}
       onTouchStart={handleTouchStart}
     >
-      {children}
+      <div className="[grid-column:1/1] [grid-row:1/1] max-w-full">
+        {children}
+      </div>
 
-      {!shouldAutoScroll && (
-        <div className="sticky bottom-0 left-0 flex w-full justify-end">
-          <Button
-            onClick={scrollToBottom}
-            className="h-8 w-8 rounded-full ease-in-out animate-in fade-in-0 slide-in-from-bottom-1"
-            size="icon"
-            variant="ghost"
-          >
-            <ArrowDown className="h-4 w-4" />
-          </Button>
-        </div>
-      )}
+      <div className="flex justify-end items-end [grid-column:1/1] [grid-row:1/1] flex-1">
+        {!shouldAutoScroll && (
+          <div className="sticky bottom-0 left-0 flex w-full justify-end">
+            <Button
+              onClick={scrollToBottom}
+              className="h-8 w-8 rounded-full ease-in-out animate-in fade-in-0 slide-in-from-bottom-1"
+              size="icon"
+              variant="ghost"
+            >
+              <ArrowDown className="h-4 w-4" />
+            </Button>
+          </div>
+        )}
+      </div>
     </div>
   )
 }
