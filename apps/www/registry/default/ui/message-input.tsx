@@ -285,6 +285,7 @@ const ImageFilePreview = React.forwardRef<HTMLDivElement, FilePreviewProps>(
           className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full border bg-background"
           type="button"
           onClick={onRemove}
+          aria-label="Remove attachment"
         >
           <X className="h-2.5 w-2.5" />
         </button>
@@ -331,6 +332,7 @@ const TextFilePreview = React.forwardRef<HTMLDivElement, FilePreviewProps>(
           className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full border bg-background"
           type="button"
           onClick={onRemove}
+          aria-label="Remove attachment"
         >
           <X className="h-2.5 w-2.5" />
         </button>
@@ -364,6 +366,7 @@ const GenericFilePreview = React.forwardRef<HTMLDivElement, FilePreviewProps>(
           className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full border bg-background"
           type="button"
           onClick={onRemove}
+          aria-label="Remove attachment"
         >
           <X className="h-2.5 w-2.5" />
         </button>
