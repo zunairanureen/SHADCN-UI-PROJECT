@@ -12,7 +12,7 @@ const groq = createOpenAI({
 export async function POST(req: Request) {
   const { messages } = await req.json()
 
-  const result = await streamText({
+  const result = streamText({
     model: groq("llama-3.1-70b-versatile"),
     messages: convertToCoreMessages(messages),
   })
