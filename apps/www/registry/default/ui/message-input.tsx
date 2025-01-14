@@ -94,6 +94,18 @@ export function MessageInput({
     const items = event.clipboardData?.items
     if (!items) return
 
+    const text = event.clipboardData.getData("text")
+    if (text && text.length > 500 && props.allowAttachments) {
+      event.preventDefault()
+      const blob = new Blob([text], { type: "text/plain" })
+      const file = new File([blob], "Pasted text", {
+        type: "text/plain",
+        lastModified: Date.now(),
+      })
+      addFiles([file])
+      return
+    }
+
     const files = Array.from(items)
       .map((item) => item.getAsFile())
       .filter((file) => file !== null)
